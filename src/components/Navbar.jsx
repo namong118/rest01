@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import ThemeControls from './ThemeControls'
 import s from './Navbar.module.css'
 
 const LINKS = [
@@ -46,13 +47,17 @@ export default function Navbar() {
           </NavLink>
         </nav>
 
-        <button
-          className={`${s.burger} ${open ? s.burgerOpen : ''}`}
-          onClick={() => setOpen(v => !v)}
-          aria-label="Toggle menu"
-        >
-          <span /><span /><span />
-        </button>
+        {/* 테마 컨트롤 — CTA 버튼 오른쪽, 항상 표시 */}
+        <div className={s.right}>
+          <ThemeControls />
+          <button
+            className={`${s.burger} ${open ? s.burgerOpen : ''}`}
+            onClick={() => setOpen(v => !v)}
+            aria-label="Toggle menu"
+          >
+            <span /><span /><span />
+          </button>
+        </div>
 
       </div>
     </header>

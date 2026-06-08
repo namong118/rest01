@@ -1,0 +1,100 @@
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-left: 12px;
+  border-left: 1px solid var(--border);
+}
+
+/* ── Mode toggle ──────────────────────────────── */
+.modeBtn {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  transition: color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.modeBtn:hover {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+.modeIcon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.6) rotate(-30deg);
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
+  pointer-events: none;
+}
+
+.modeIcon.visible {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+/* ── Palette dots ─────────────────────────────── */
+.palette {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 4px;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--c);
+  border: 2px solid transparent;
+  transition: transform 0.2s var(--ease), border-color 0.2s, box-shadow 0.2s;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.dot:hover {
+  transform: scale(1.25);
+  box-shadow: 0 0 8px var(--c);
+}
+
+.dotActive {
+  border-color: var(--text-primary);
+  transform: scale(1.2);
+  box-shadow: 0 0 10px var(--c);
+}
+
+.dotActive::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid var(--c);
+  opacity: 0.5;
+}
+
+/* ── Mobile ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .controls {
+    padding-left: 8px;
+    border-left: none;
+    gap: 2px;
+  }
+
+  .dot {
+    width: 14px;
+    height: 14px;
+  }
+
+  .modeBtn {
+    width: 30px;
+    height: 30px;
+  }
+}

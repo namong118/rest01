@@ -1,4 +1,5 @@
 import { HashRouter, Routes, Route } from 'react-router-dom'
+import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -10,18 +11,20 @@ import './App.css'
 
 export default function App() {
   return (
-    <HashRouter>
-      <Navbar />
-      <main style={{ flex: 1, paddingTop: 'var(--nav-h)' }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/works" element={<Works />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
-      <Footer />
-    </HashRouter>
+    <ThemeProvider>
+      <HashRouter>
+        <Navbar />
+        <main style={{ flex: 1, paddingTop: 'var(--nav-h)' }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/works" element={<Works />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </HashRouter>
+    </ThemeProvider>
   )
 }

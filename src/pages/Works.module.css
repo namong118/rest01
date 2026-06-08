@@ -1,6 +1,6 @@
 .header {
   padding: 80px 0 96px;
-  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(99,102,241,0.1) 0%, transparent 70%);
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, var(--primary-glow) 0%, transparent 70%);
   border-bottom: 1px solid var(--border);
 }
 
@@ -36,7 +36,7 @@
   cursor: default;
   transition: background 0.2s;
 }
-.workItem:hover { background: rgba(99,102,241,0.03); }
+.workItem:hover { background: var(--primary-subtle); }
 
 .workLeft { padding-top: 6px; }
 
@@ -54,7 +54,7 @@
   font-size: 12px; font-weight: 600; letter-spacing: 1px;
   color: var(--primary-light);
   background: var(--primary-bg);
-  border: 1px solid rgba(99,102,241,0.2);
+  border: 1px solid var(--primary-border);
   border-radius: 12px;
   padding: 3px 10px;
 }

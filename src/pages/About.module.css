@@ -1,6 +1,6 @@
 .header {
   padding: 80px 0 96px;
-  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(99,102,241,0.1) 0%, transparent 70%);
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, var(--primary-glow) 0%, transparent 70%);
   border-bottom: 1px solid var(--border);
 }
 
