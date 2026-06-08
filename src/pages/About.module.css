@@ -51,7 +51,25 @@
   transform: translateY(-3px);
 }
 
-.valueIcon  { font-size: 26px; color: var(--primary-light); display: block; margin-bottom: 16px; }
+.iconWrap {
+  width: 48px;
+  height: 48px;
+  background: var(--primary-bg);
+  border: 1px solid var(--primary-border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.valueCard:hover .iconWrap {
+  background: var(--primary-glow);
+  border-color: var(--border-hover);
+}
+
+.valueIcon { font-size: 18px; color: var(--primary-light); }
 .valueTitle { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; }
 .valueDesc  { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
 

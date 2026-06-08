@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShieldHalved, faBolt } from '@fortawesome/free-solid-svg-icons'
+import { faGem, faLightbulb, faHandshake } from '@fortawesome/free-regular-svg-icons'
 import s from './About.module.css'
 
 const TEAM = [
@@ -15,6 +18,29 @@ const HISTORY = [
   { year: '2024', event: 'Team grew to 12. Launched 4 consumer AR apps.' },
   { year: '2025', event: 'Integrated Claude AI across all products.' },
   { year: '2026', event: '50+ projects. Series A in progress.' },
+]
+
+const VALUES = [
+  {
+    icon: faGem,          /* regular — outlined diamond */
+    title: 'Craft first',
+    desc: 'We sweat every interaction. Good enough is not in our vocabulary.',
+  },
+  {
+    icon: faHandshake,    /* regular — outlined handshake */
+    title: 'Honest work',
+    desc: "No hype. We tell clients what's possible, not what they want to hear.",
+  },
+  {
+    icon: faBolt,         /* solid — lightning for speed */
+    title: 'Move fast',
+    desc: 'Prototype in days, ship in weeks. Iteration beats perfection.',
+  },
+  {
+    icon: faLightbulb,    /* regular — outlined bulb */
+    title: 'Stay curious',
+    desc: 'AR is young. We experiment constantly and share what we learn.',
+  },
 ]
 
 export default function About() {
@@ -40,14 +66,11 @@ export default function About() {
       <section className={s.values}>
         <div className="container">
           <div className={s.valuesGrid}>
-            {[
-              { icon: '◈', title: 'Craft first',      desc: 'We sweat every interaction. Good enough is not in our vocabulary.' },
-              { icon: '◇', title: 'Honest work',      desc: "No hype. We tell clients what's possible, not what they want to hear." },
-              { icon: '○', title: 'Move fast',        desc: 'Prototype in days, ship in weeks. Iteration beats perfection.' },
-              { icon: '△', title: 'Stay curious',     desc: 'AR is young. We experiment constantly and share what we learn.' },
-            ].map(({ icon, title, desc }) => (
+            {VALUES.map(({ icon, title, desc }) => (
               <div key={title} className={s.valueCard}>
-                <span className={s.valueIcon}>{icon}</span>
+                <div className={s.iconWrap}>
+                  <FontAwesomeIcon icon={icon} className={s.valueIcon} />
+                </div>
                 <h3 className={s.valueTitle}>{title}</h3>
                 <p className={s.valueDesc}>{desc}</p>
               </div>

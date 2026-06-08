@@ -1,13 +1,15 @@
 import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleCheck } from '@fortawesome/free-regular-svg-icons'
 import s from './Contact.module.css'
 
 const TYPES = [
-  { value: 'ar-app',       label: 'AR App Development' },
-  { value: 'ai',           label: 'AI Integration' },
-  { value: 'web-ar',       label: 'WebAR / 3D' },
-  { value: 'enterprise',   label: 'Enterprise Solution' },
-  { value: 'consulting',   label: 'Consulting' },
-  { value: 'other',        label: 'Other' },
+  { value: 'ar-app',     label: 'AR App Development' },
+  { value: 'ai',         label: 'AI Integration' },
+  { value: 'web-ar',     label: 'WebAR / 3D' },
+  { value: 'enterprise', label: 'Enterprise Solution' },
+  { value: 'consulting', label: 'Consulting' },
+  { value: 'other',      label: 'Other' },
 ]
 
 export default function Contact() {
@@ -70,7 +72,7 @@ export default function Contact() {
             <div className={s.formWrap}>
               {sent ? (
                 <div className={s.success}>
-                  <div className={s.successIcon}>✓</div>
+                  <FontAwesomeIcon icon={faCircleCheck} className={s.successIcon} />
                   <h3>Message received!</h3>
                   <p>We'll be in touch within one business day.</p>
                 </div>

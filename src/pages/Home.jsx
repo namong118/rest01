@@ -1,24 +1,27 @@
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faVrCardboard, faBrain, faGlobe, faCrosshairs, faCube, faMicrochip, faBolt } from '@fortawesome/free-solid-svg-icons'
+import { faComments } from '@fortawesome/free-regular-svg-icons'
 import s from './Home.module.css'
 
 const SERVICES = [
   {
-    icon: '◈',
+    icon: faVrCardboard,
     title: 'AR App Development',
     desc: 'Native iOS & Android AR apps powered by ARKit, ARCore, and AR Foundation. From concept to App Store.',
   },
   {
-    icon: '◇',
+    icon: faMicrochip,
     title: 'AI Integration',
     desc: 'Embed computer vision and generative AI into your product. Object recognition, real-time overlay, LLM-powered features.',
   },
   {
-    icon: '○',
+    icon: faGlobe,
     title: 'WebAR & 3D',
     desc: 'Browser-based AR experiences with Three.js and WebXR. No app install required — just open and experience.',
   },
   {
-    icon: '△',
+    icon: faComments,
     title: 'Consulting',
     desc: 'AR/XR strategy, technical roadmap, and prototyping. We help teams evaluate and adopt spatial computing.',
   },
@@ -26,7 +29,7 @@ const SERVICES = [
 
 const STATS = [
   { value: '50+', label: 'Projects Delivered' },
-  { value: '12', label: 'Team Members' },
+  { value: '12',  label: 'Team Members' },
   { value: '98%', label: 'Client Satisfaction' },
   { value: '4yr', label: 'In Business' },
 ]
@@ -62,21 +65,27 @@ export default function Home() {
           <div className={s.heroVisual}>
             <div className={s.orb} />
             <div className={s.floatCard} style={{ '--delay': '0s' }}>
-              <span className={s.cardIcon}>◈</span>
+              <span className={s.cardIcon}>
+                <FontAwesomeIcon icon={faCrosshairs} />
+              </span>
               <div>
                 <div className={s.cardTitle}>AR Recognition</div>
                 <div className={s.cardSub}>99.2% accuracy</div>
               </div>
             </div>
             <div className={s.floatCard} style={{ '--delay': '0.8s' }}>
-              <span className={s.cardIconAmber}>△</span>
+              <span className={s.cardIconAmber}>
+                <FontAwesomeIcon icon={faCube} />
+              </span>
               <div>
                 <div className={s.cardTitle}>Real-time 3D</div>
                 <div className={s.cardSub}>60fps rendering</div>
               </div>
             </div>
             <div className={s.floatCard} style={{ '--delay': '1.6s' }}>
-              <span className={s.cardIcon}>○</span>
+              <span className={s.cardIcon}>
+                <FontAwesomeIcon icon={faBrain} />
+              </span>
               <div>
                 <div className={s.cardTitle}>AI-Powered</div>
                 <div className={s.cardSub}>Claude API</div>
@@ -115,7 +124,9 @@ export default function Home() {
           <div className={s.serviceGrid}>
             {SERVICES.map(({ icon, title, desc }) => (
               <div key={title} className={s.serviceCard}>
-                <span className={s.serviceIcon}>{icon}</span>
+                <div className={s.iconWrap}>
+                  <FontAwesomeIcon icon={icon} className={s.serviceIcon} />
+                </div>
                 <h3 className={s.serviceTitle}>{title}</h3>
                 <p className={s.serviceDesc}>{desc}</p>
                 <Link to="/services" className={s.serviceLink}>
